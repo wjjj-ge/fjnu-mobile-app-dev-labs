@@ -4,6 +4,23 @@
 
 本仓库按实验编号分目录存放，每个实验是一个**独立的 Gradle 工程**（各自的 SDK 版本、依赖互不干扰），根目录只放索引与通用忽略规则。
 
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="lab1-android-basics/docs/screenshots/01-main.png" width="300"><br>
+      <b>实验 1 · Android 开发基础</b><br>
+      <sub>运行环境自检卡 + 生命周期观测台（9 个回调实时上屏）</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="lab2-android-layout/docs/screenshots/01-main.png" width="300"><br>
+      <b>实验 2 · Android 界面布局</b><br>
+      <sub>线性 / 表格 / 约束 ×2 / Compose 五题合一的目录式 App</sub>
+    </td>
+  </tr>
+</table>
+
+运行环境：Android Studio + AGP 9.4.1 / Gradle 9.6 / JDK 21，实测机型为 `Pixel 7 · API 36`（Android 16）。
+
 ## 实验索引
 
 | 编号 | 目录 | 主题 | 关键产出 |
