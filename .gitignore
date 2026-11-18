@@ -28,3 +28,6 @@ captures/
 .DS_Store
 Thumbs.db
 *.log
+
+# Gradle 守护进程 JVM 判定（自动生成，且绑定了具体 JDK 版本，不应进仓库）
+gradle-daemon-jvm.properties
