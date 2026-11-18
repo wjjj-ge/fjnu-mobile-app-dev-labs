@@ -2,6 +2,8 @@
 
 福建师范大学 · 移动软件开发 · 实验1（Android 开发基础）
 
+> **交付状态：已完成**（tag `lab1`）。9 个生命周期回调全部上屏，四类场景（首次启动 / 跳转返回 / 旋转重建 / 前后台）均已实机实测，5 张截图见 `docs/screenshots/`，原始 `logcat` 见 `logcat-Lab1Lifecycle.txt`；`run-debug.bat` 可一键编译安装。
+
 把默认的 `Hello World` 工程改造成一块「生命周期观测台」：Activity 的每一次 `onCreate` / `onStart` / `onResume` / `onPause` / `onStop` / `onRestart` / `onDestroy` / `onSaveInstanceState` / `onRestoreInstanceState` 都会带时间戳打在屏幕上，同时输出到 Logcat。
 
 ## 功能
@@ -72,4 +74,6 @@ logcat-Lab1Lifecycle.txt                                    实测日志（两�
 
 ## 作者
 
-福建师范大学 软件工程专业 · 移动软件开发课程
+**wjjj-ge**（[@wjjj-ge](https://github.com/wjjj-ge)）· 福建师范大学 · 计算机与网络空间安全学院 · 软件工程专业
+
+课程：《移动软件开发》· 2026 年秋季学期 · 实验1（Android 开发基础）
