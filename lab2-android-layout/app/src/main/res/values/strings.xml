@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">实验2-界面布局</string>
+    <string name="app_subtitle">Android 布局实践 · 线性 / 表格 / 约束 ×2 / Compose</string>
+
+    <string name="title_linear">线性布局</string>
+    <string name="title_table">表格布局</string>
+    <string name="title_constraint_one">约束布局 1 · ConstraintLayoutTest</string>
+    <string name="title_constraint_two">约束布局 2 · 太空订票</string>
+
+    <string name="back">返回</string>
+    <string name="menu_hint">点击任意一题，进入对应的布局实现</string>
+
+    <string name="nav_01_no">01</string>
+    <string name="nav_01_title">线性布局</string>
+    <string name="nav_01_desc">LinearLayout + layout_weight，4×4 权重网格</string>
+    <string name="nav_01_tag">layout_weight</string>
+
+    <string name="nav_02_no">02</string>
+    <string name="nav_02_title">表格布局</string>
+    <string name="nav_02_desc">TableLayout 两列拉伸，右键对齐的菜单表</string>
+    <string name="nav_02_tag">TableLayout</string>
+
+    <string name="nav_03_no">03</string>
+    <string name="nav_03_title">约束布局 1 · 计算器</string>
+    <string name="nav_03_desc">ConstraintLayout 链式约束，16 键均匀分布</string>
+    <string name="nav_03_tag">chain</string>
+
+    <string name="nav_04_no">04</string>
+    <string name="nav_04_title">约束布局 2 · 太空订票</string>
+    <string name="nav_04_desc">比例约束 + 基线对齐，还原订票首页</string>
+    <string name="nav_04_tag">ratio / baseline</string>
+    <string name="nav_05_no">05</string>
+    <string name="nav_05_title">Compose 待办清单</string>
+    <string name="nav_05_desc">声明式 UI，勾选即重组并刷新进度</string>
+    <string name="nav_05_tag">LazyColumn / state</string>
+
+    <!-- 线性布局格子文案 -->
+    <string name="cell_11">One,One</string>
+    <string name="cell_12">One,Two</string>
+    <string name="cell_13">One,Three</string>
+    <string name="cell_14">One,Four</string>
+    <string name="cell_21">Two,One</string>
+    <string name="cell_22">Two,Two</string>
+    <string name="cell_23">Two,Three</string>
+    <string name="cell_24">Two,Four</string>
+    <string name="cell_31">Three,One</string>
+    <string name="cell_32">Three,Two</string>
+    <string name="cell_33">Three,Three</string>
+    <string name="cell_34">Three,Four</string>
+    <string name="cell_41">Four,One</string>
+    <string name="cell_42">Four,Two</string>
+    <string name="cell_43">Four,Three</string>
+    <string name="cell_44">Four,Four</string>
+
+    <!-- 表格布局 -->
+    <string name="table_title">Hello TableLayout</string>
+    <string name="table_open">Open…</string>
+    <string name="table_open_key">Ctrl-O</string>
+    <string name="table_save">Save…</string>
+    <string name="table_save_key">Ctrl-S</string>
+    <string name="table_saveas">Save As…</string>
+    <string name="table_saveas_key">Ctrl-Shift-S</string>
+    <string name="table_import">✕ Import…</string>
+    <string name="table_export">✕ Export…</string>
+    <string name="table_export_key">Ctrl-E</string>
+    <string name="table_quit">Quit</string>
+
+    <!-- 计算器 -->
+    <string name="calc_input">Input</string>
+    <string name="calc_zero">0.0</string>
+    <string name="k_7">7</string>
+    <string name="k_8">8</string>
+    <string name="k_9">9</string>
+    <string name="k_add">＋</string>
+    <string name="k_4">4</string>
+    <string name="k_5">5</string>
+    <string name="k_6">6</string>
+    <string name="k_mul">×</string>
+    <string name="k_1">1</string>
+    <string name="k_2">2</string>
+    <string name="k_3">3</string>
+    <string name="k_div">÷</string>
+    <string name="k_dot">．</string>
+    <string name="k_0">0</string>
+    <string name="k_eq">＝</string>
+    <string name="k_sub">−</string>
+
+    <!-- 订票 -->
+    <string name="tab_station">Space Stations</string>
+    <string name="tab_flights">Flights</string>
+    <string name="tab_rovers">Rovers</string>
+    <string name="city_dca">DCA</string>
+    <string name="city_mars">MARS</string>
+    <string name="one_way">One Way</string>
+    <string name="traveller">1 Traveller</string>
+    <string name="depart">DEPART</string>
+</resources>

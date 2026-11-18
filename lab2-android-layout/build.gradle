@@ -1,0 +1,4 @@
+// Top-level build file for Lab2 (Android 界面布局)
+plugins {
+    alias(libs.plugins.android.application) apply false
+}

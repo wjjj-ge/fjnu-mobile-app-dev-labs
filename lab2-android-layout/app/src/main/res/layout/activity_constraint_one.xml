@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/view_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvInputLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/calc_input"
+        android:textColor="#9E9E9E"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header" />
+
+    <TextView
+        android:id="@+id/tvDisplay"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/display_olive"
+        android:gravity="center_vertical|end"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="@string/calc_zero"
+        android:textColor="#3B3B31"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvInputLabel" />
+
+    <!-- 第 1 行：7 8 9 + -->
+    <TextView
+        android:id="@+id/k7"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/key_gray"
+        android:gravity="center"
+        android:text="@string/k_7"
+        android:textColor="@color/key_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/k8"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDisplay" />
+
+    <TextView
+        android:id="@+id/k8"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/key_gray"
+        android:gravity="center"
+        android:text="@string/k_8"
+        android:textColor="@color/key_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/k9"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/k7"
+        app:layout_constraintTop_toTopOf="@id/k7" />
+
+    <TextView
+        android:id="@+id/k9"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/key_gray"
+        android:gravity="center"
+        android:text="@string/k_9"
+        android:textColor="@color/key_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/kAdd"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/k8"
+        app:layout_constraintTop_toTopOf="@id/k7" />
+
+    <TextView
+        android:id="@+id/kAdd"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/key_gray"
+        android:gravity="center"
+        android:text="@string/k_add"
+        android:textColor="@color/key_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/k9"
+        app:layout_constraintTop_toTopOf="@id/k7" />
+
+    <!-- 第 2 行：4 5 6 × -->
+    <TextView
+        android:id="@+id/k4"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/key_gray"
+        android:gravity="center"
+        android:text="@string/k_4"
+        android:textColor="@color/key_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/k5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@id/k7"
+        app:layout_constraintTop_toBottomOf="@id/k7" />
+
+    <TextView
+        android:id="@+id/k5"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/key_gray"
+        android:gravity="center"
+        android:text="@string/k_5"
+        android:textColor="@color/key_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/k6"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/k4"
+        app:layout_constraintTop_toTopOf="@id/k4" />
+
+    <TextView
+        android:id="@+id/k6"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/key_gray"
+        android:gravity="center"
+        android:text="@string/k_6"
+        android:textColor="@color/key_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/kMul"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/k5"
+        app:layout_constraintTop_toTopOf="@id/k4" />
+
+    <TextView
+        android:id="@+id/kMul"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/key_gray"
+        android:gravity="center"
+        android:text="@string/k_mul"
+        android:textColor="@color/key_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/kAdd"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/k6"
+        app:layout_constraintTop_toTopOf="@id/k4" />
+
+    <!-- 第 3 行：1 2 3 ÷ -->
+    <TextView
+        android:id="@+id/k1"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/key_gray"
+        android:gravity="center"
+        android:text="@string/k_1"
+        android:textColor="@color/key_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/k2"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@id/k7"
+        app:layout_constraintTop_toBottomOf="@id/k4" />
+
+    <TextView
+        android:id="@+id/k2"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/key_gray"
+        android:gravity="center"
+        android:text="@string/k_2"
+        android:textColor="@color/key_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/k3"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/k1"
+        app:layout_constraintTop_toTopOf="@id/k1" />
+
+    <TextView
+        android:id="@+id/k3"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/key_gray"
+        android:gravity="center"
+        android:text="@string/k_3"
+        android:textColor="@color/key_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/kDiv"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/k2"
+        app:layout_constraintTop_toTopOf="@id/k1" />
+
+    <TextView
+        android:id="@+id/kDiv"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/key_gray"
+        android:gravity="center"
+        android:text="@string/k_div"
+        android:textColor="@color/key_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/kAdd"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/k3"
+        app:layout_constraintTop_toTopOf="@id/k1" />
+
+    <!-- 第 4 行：. 0 = − -->
+    <TextView
+        android:id="@+id/kDot"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/key_gray"
+        android:gravity="center"
+        android:text="@string/k_dot"
+        android:textColor="@color/key_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/k0"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@id/k7"
+        app:layout_constraintTop_toBottomOf="@id/k1" />
+
+    <TextView
+        android:id="@+id/k0"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/key_gray"
+        android:gravity="center"
+        android:text="@string/k_0"
+        android:textColor="@color/key_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/kEq"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/kDot"
+        app:layout_constraintTop_toTopOf="@id/kDot" />
+
+    <TextView
+        android:id="@+id/kEq"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/key_gray"
+        android:gravity="center"
+        android:text="@string/k_eq"
+        android:textColor="@color/key_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/kSub"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/k0"
+        app:layout_constraintTop_toTopOf="@id/kDot" />
+
+    <TextView
+        android:id="@+id/kSub"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/key_gray"
+        android:gravity="center"
+        android:text="@string/k_sub"
+        android:textColor="@color/key_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/kAdd"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/kEq"
+        app:layout_constraintTop_toTopOf="@id/kDot" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

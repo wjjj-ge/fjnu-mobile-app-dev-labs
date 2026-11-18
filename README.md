@@ -9,6 +9,7 @@
 | 编号 | 目录 | 主题 | 关键产出 |
 | --- | --- | --- | --- |
 | 实验 1 | [`lab1-android-basics/`](lab1-android-basics/) | Android 开发基础：运行环境、Activity 生命周期 | 运行环境自检卡 + 生命周期观测台（9 个回调全落地）、5 张实测截图、`logcat` 原始证据 |
+| 实验 2 | [`lab2-android-layout/`](lab2-android-layout/) | Android 界面布局：线性 / 表格 / 约束 ×2 / Compose | 五题合一的目录式 App、8 张实机截图、五套布局技法逐题说明 |
 
 后续实验按 `lab2-xxx/`、`lab3-xxx/` 续加，并在上表补一行。
 
@@ -19,6 +20,13 @@
   - 8 项设备/运行时信息（厂商、型号、API 级别、ABI、分辨率、dpi、最小宽度、方向、包名、PID）
   - 9 个 `Activity` 生命周期回调，每次输出「墙钟时间 + T+相对毫秒 + 回调名」，屏幕上直接可读
   - 四类场景实测：首次启动 / 页面跳转与返回 / 旋转（配置变更）/ 前后台切换
+
+- **实验 2**：[`lab2-android-layout/README.md`](lab2-android-layout/README.md)
+  - 线性布局：外层 4 行等高 + 内层 4 格按课件实测像素归一化的 `layout_weight`（21:33:24:22 等三套比例）
+  - 表格布局：`stretchColumns="1"` 让快捷键贴右，`layout_span="2"` 跨列画分组细线
+  - 约束布局 1：计算器 16 键四行横链（`spread` + 等权重），不嵌套 `LinearLayout`
+  - 约束布局 2：太空订票首页，等权重页签、绿底等宽、白框压接缝、贴底 `DEPART`
+  - Compose：`mutableStateListOf` + `LazyColumn` 的待办清单，勾选即重组，计数与删除线同步
 
 ## 实测要点（Android 16 / API 36）
 

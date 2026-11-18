@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/slide_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_header" />
+
+    <!-- 4 行，每行 4 格；行高 weight=1，格宽 weight 按课件实测比例 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="26dp">
+
+        <!-- Row 1 : 21 / 33 / 24 / 22 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="21"
+                android:background="@drawable/cell_box"
+                android:gravity="center"
+                android:text="@string/cell_11"
+                android:textColor="@color/cell_text"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="33"
+                android:background="@drawable/cell_box"
+                android:gravity="center"
+                android:text="@string/cell_12"
+                android:textColor="@color/cell_text"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24"
+                android:background="@drawable/cell_box"
+                android:gravity="center"
+                android:text="@string/cell_13"
+                android:textColor="@color/cell_text"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="22"
+                android:background="@drawable/cell_box"
+                android:gravity="center"
+                android:text="@string/cell_14"
+                android:textColor="@color/cell_text"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <!-- Row 2 : 21 / 33 / 24 / 22 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="21"
+                android:background="@drawable/cell_box"
+                android:gravity="center"
+                android:text="@string/cell_21"
+                android:textColor="@color/cell_text"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="33"
+                android:background="@drawable/cell_box"
+                android:gravity="center"
+                android:text="@string/cell_22"
+                android:textColor="@color/cell_text"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24"
+                android:background="@drawable/cell_box"
+                android:gravity="center"
+                android:text="@string/cell_23"
+                android:textColor="@color/cell_text"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="22"
+                android:background="@drawable/cell_box"
+                android:gravity="center"
+                android:text="@string/cell_24"
+                android:textColor="@color/cell_text"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <!-- Row 3 : 24 / 25 / 27 / 25 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24"
+                android:background="@drawable/cell_box"
+                android:gravity="center"
+                android:text="@string/cell_31"
+                android:textColor="@color/cell_text"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:background="@drawable/cell_box"
+                android:gravity="center"
+                android:text="@string/cell_32"
+                android:textColor="@color/cell_text"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="27"
+                android:background="@drawable/cell_box"
+                android:gravity="center"
+                android:text="@string/cell_33"
+                android:textColor="@color/cell_text"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:background="@drawable/cell_box"
+                android:gravity="center"
+                android:text="@string/cell_34"
+                android:textColor="@color/cell_text"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <!-- Row 4 : 21 / 32 / 24 / 23 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="21"
+                android:background="@drawable/cell_box"
+                android:gravity="center"
+                android:text="@string/cell_41"
+                android:textColor="@color/cell_text"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="32"
+                android:background="@drawable/cell_box"
+                android:gravity="center"
+                android:text="@string/cell_42"
+                android:textColor="@color/cell_text"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24"
+                android:background="@drawable/cell_box"
+                android:gravity="center"
+                android:text="@string/cell_43"
+                android:textColor="@color/cell_text"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="23"
+                android:background="@drawable/cell_box"
+                android:gravity="center"
+                android:text="@string/cell_44"
+                android:textColor="@color/cell_text"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

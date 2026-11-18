@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Lab2Layout">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".LinearLayoutActivity"
+            android:exported="false"
+            android:label="@string/title_linear" />
+
+        <activity
+            android:name=".TableLayoutActivity"
+            android:exported="false"
+            android:label="@string/title_table" />
+
+        <activity
+            android:name=".ConstraintOneActivity"
+            android:exported="false"
+            android:label="@string/title_constraint_one" />
+
+        <activity
+            android:name=".ConstraintTwoActivity"
+            android:exported="false"
+            android:label="@string/title_constraint_two" />
+
+        <activity
+            android:name=".TodoActivity"
+            android:exported="false"
+            android:label="@string/nav_05_title"
+            android:theme="@style/Theme.Lab2Layout" />
+
+    </application>
+
+</manifest>
