@@ -69,6 +69,10 @@
 
 ## 构建与运行
 
+最快的路径：启动模拟器后，直接双击本目录下的 `run-debug.bat`（先 `--stop` 清守护进程，再 `installDebug`，最后重启 App 并打印 PID）。脚本输出里 PID 每次都不一样，就说明装的是新包。
+
+手动三步：
+
 ```powershell
 # 工程根目录
 .\gradlew.bat --stop          # 先停掉 IDE 拉起的守护进程（见踩坑 1）
