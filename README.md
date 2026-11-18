@@ -23,10 +23,10 @@
 
 ## 实验索引
 
-| 编号 | 目录 | 主题 | 关键产出 |
-| --- | --- | --- | --- |
-| 实验 1 | [`lab1-android-basics/`](lab1-android-basics/) | Android 开发基础：运行环境、Activity 生命周期 | 运行环境自检卡 + 生命周期观测台（9 个回调全落地）、5 张实测截图、`logcat` 原始证据 |
-| 实验 2 | [`lab2-android-layout/`](lab2-android-layout/) | Android 界面布局：线性 / 表格 / 约束 ×2 / Compose | 五题合一的目录式 App、8 张实机截图、五套布局技法逐题说明 |
+| 编号 | 目录 | 主题 | 关键产出 | 博客 |
+| --- | --- | --- | --- | --- |
+| 实验 1 | [`lab1-android-basics/`](lab1-android-basics/) | Android 开发基础：运行环境、Activity 生命周期 | 运行环境自检卡 + 生命周期观测台（9 个回调全落地）、5 张实测截图、`logcat` 原始证据 | [CSDN · 实验1](https://blog.csdn.net/wjjj_ge/article/details/170988982) |
+| 实验 2 | [`lab2-android-layout/`](lab2-android-layout/) | Android 界面布局：线性 / 表格 / 约束 ×2 / Compose | 五题合一的目录式 App、8 张实机截图、五套布局技法逐题说明 | [CSDN · 实验2](https://blog.csdn.net/wjjj_ge/article/details/170990569) |
 
 后续实验按 `lab2-xxx/`、`lab3-xxx/` 续加，并在上表补一行。
 
@@ -90,3 +90,9 @@ fjnu-mobile-app-dev-labs/
 ```
 
 每个实验完成后打一个 tag（`lab1`、`lab2` …），方便按版本点开查看当时的完成状态。
+
+## 作者
+
+**wjjj-ge**（[@wjjj-ge](https://github.com/wjjj-ge)）· 福建师范大学 · 计算机与网络空间安全学院 · 软件工程专业
+
+课程：《移动软件开发》· 2026 年秋季学期
