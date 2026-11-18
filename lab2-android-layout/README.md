@@ -2,7 +2,7 @@
 
 《移动软件开发》实验二：用线性布局、表格布局、约束布局完成课件上的四道界面题，再补一个 Compose 版待办清单做对照。五个界面在同一个工程里，首页是题目目录，点卡片进对应实现。
 
-> **交付状态：已完成**（tag `lab2`）。五题全部实现并实机验证，8 张截图见 `docs/screenshots/`（含 Compose 页「‹ 返回」入口的修复后版本），`run-debug.bat` 可一键编译安装。
+> **交付状态：已完成**（tag `lab2`）。五题全部实现并实机验证，9 张截图见 `docs/screenshots/`（含 Compose 页「‹ 返回」入口的修复后版本、线性布局 margin 对照实验），`run-debug.bat` 可一键编译安装。
 >
 > **图文版实验记录**：[CSDN · Android 界面布局实战](https://blog.csdn.net/wjjj_ge/article/details/170990569)
 
@@ -31,6 +31,12 @@
 | 勾选两项后 2/3 | 新增一条后 2/4 |
 | --- | --- |
 | ![勾选](docs/screenshots/07-compose-checked.png) | ![新增](docs/screenshots/08-compose-added.png) |
+
+| 对照：每格加 3dp margin（双线夹缝） |
+| --- |
+| ![加 margin](docs/screenshots/09-linear-gap.png) |
+
+最后一张是对照实验的产物：同一页面只改 `layout_margin` 一项，格子交界处就从「一条 6px 亮线」变成「两条 3px 亮线夹 16px 底色」。测量方法见博客第二节。
 
 ## 各题的关键做法
 
