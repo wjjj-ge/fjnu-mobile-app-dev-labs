@@ -2,6 +2,10 @@
 
 《移动软件开发》实验二：用线性布局、表格布局、约束布局完成课件上的四道界面题，再补一个 Compose 版待办清单做对照。五个界面在同一个工程里，首页是题目目录，点卡片进对应实现。
 
+> **交付状态：已完成**（tag `lab2`）。五题全部实现并实机验证，8 张截图见 `docs/screenshots/`（含 Compose 页「‹ 返回」入口的修复后版本），`run-debug.bat` 可一键编译安装。
+>
+> **图文版实验记录**：[CSDN · Android 界面布局实战](https://blog.csdn.net/wjjj_ge/article/details/170990569)
+
 | 序号 | 界面 | 主要练的东西 | 源码 |
 | --- | --- | --- | --- |
 | 01 | 线性布局 · 4×4 权重网格 | 嵌套 `LinearLayout` + `layout_weight` 双轴分配 | `activity_linear.xml` |
@@ -118,3 +122,9 @@ lab2-android-layout/
 ## 界面素材
 
 `double_arrows.png`、`galaxy.png`、`rocket_icon.png`、`rover_icon.png`、`space_station_icon.png`、`single_arrow.png` 来自课程群文件「实验2图片」压缩包，已放进 `res/drawable/`。
+
+## 作者
+
+**wjjj-ge**（[@wjjj-ge](https://github.com/wjjj-ge)）· 福建师范大学 · 计算机与网络空间安全学院 · 软件工程专业
+
+课程：《移动软件开发》· 2026 年秋季学期 · 实验2（Android 界面布局）
