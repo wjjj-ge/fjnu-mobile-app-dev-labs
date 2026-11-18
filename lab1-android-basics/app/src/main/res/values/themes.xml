@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- 实验1：固定用浅色主题，避免截图在深色模式下出现配色偏差 -->
+    <style name="Base.Theme.FirstLab" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/accent</item>
+        <item name="android:windowBackground">@color/page_bg</item>
+    </style>
+
+    <style name="Theme.FirstLab" parent="Base.Theme.FirstLab" />
+</resources>

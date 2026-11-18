@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- 与 values/themes.xml 保持一致：实验1 仅使用浅色主题 -->
+    <style name="Base.Theme.FirstLab" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/accent</item>
+        <item name="android:windowBackground">@color/page_bg</item>
+    </style>
+
+    <style name="Theme.FirstLab" parent="Base.Theme.FirstLab" />
+</resources>

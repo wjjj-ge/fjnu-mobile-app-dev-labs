@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">实验1-运行观测台</string>
+
+    <string name="main_title">移动软件开发 · 实验1</string>
+    <string name="main_subtitle">Android 开发基础：运行环境自检与 Activity 生命周期观测</string>
+
+    <string name="section_device">① 运行环境自检（Build / Resources）</string>
+    <string name="section_state">② 生命周期状态与操作</string>
+    <string name="section_log">③ 生命周期回调流水</string>
+
+    <string name="btn_second">跳转 SecondActivity</string>
+    <string name="btn_rotate">切换横竖屏</string>
+    <string name="btn_counter">计数 +1</string>
+    <string name="btn_clear">清空日志</string>
+
+    <string name="tip_rotate">切换横竖屏会触发配置变更：Activity 被销毁并重建，日志中 onCreate 次数 +1，而计数经由 onSaveInstanceState 恢复。</string>
+    <string name="tip_logcat">同一份流水也会输出到 Logcat，过滤 Tag「Lab1Lifecycle」即可对照。</string>
+
+    <string name="second_title">SecondActivity</string>
+    <string name="second_desc">你现在看到的是第二个 Activity。此刻 MainActivity 已依次回调 onPause() 与 onStop()，退到后台但实例仍在。按返回键或下面的按钮回到 MainActivity 时，它走的是 onRestart() → onStart() → onResume()，而不是重新 onCreate()。</string>
+    <string name="second_hint">打开 Logcat 过滤 Tag「Lab1Lifecycle」，可以看到两个 Activity 的回调交错出现的完整顺序。</string>
+    <string name="btn_back">返回 MainActivity</string>
+
+    <string name="label_main">实验1 · 运行观测台</string>
+    <string name="label_second">SecondActivity 演示页</string>
+</resources>

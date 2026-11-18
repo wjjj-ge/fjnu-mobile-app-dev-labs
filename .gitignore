@@ -1,0 +1,30 @@
+# 忽略规则（整门课通用，各实验子目录仍保留自己的 .gitignore）
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+gradle-app.setting
+.gradletasknamecache
+
+# 本机配置（绝对不能提交：记录了各自机器的 SDK 路径）
+local.properties
+**/local.properties
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+captures/
+.navigation/
+.externalNativeBuild
+.cxx
+*.hprof
+
+# 系统
+.DS_Store
+Thumbs.db
+*.log
