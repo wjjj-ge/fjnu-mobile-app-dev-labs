@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_header" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="18dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="18dp"
+        android:text="@string/hint_03"
+        android:textColor="@color/text_gray"
+        android:textSize="12.5sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/nav_card"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="46dp"
+        android:paddingBottom="40dp">
+
+        <TextView
+            android:id="@+id/tvTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/test_text"
+            android:textColor="@color/text_dark"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/test_text_hint"
+            android:textColor="@color/text_gray"
+            android:textSize="11.5sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:lineSpacingExtra="3dp"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:text="菜单本身写在 res/menu/menu_text.xml：两个子菜单各自带一个 single 选择组，所以「小 / 中 / 大」和「红 / 黑」会像单选框一样互斥。"
+        android:textColor="@color/text_gray"
+        android:textSize="12sp" />
+</LinearLayout>

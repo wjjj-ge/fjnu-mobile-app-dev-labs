@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_header" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="3dp"
+        android:paddingStart="18dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="18dp"
+        android:text="@string/hint_02"
+        android:textColor="@color/text_gray"
+        android:textSize="12.5sp" />
+
+    <TextView
+        android:id="@+id/btnOpenDialog"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/btn_navy"
+        android:gravity="center"
+        android:text="@string/dialog_open"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:lineSpacingExtra="3dp"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:text="对话框里没有用系统自带的标题与按钮：整块橙头白底的卡片就是一个普通布局文件，两个 EditText 和一个按钮行都按截图摆好，最后一次性交给 setView()。"
+        android:textColor="@color/text_gray"
+        android:textSize="12sp" />
+</LinearLayout>

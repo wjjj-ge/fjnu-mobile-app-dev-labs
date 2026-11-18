@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="navy">#1B3A57</color>
+    <color name="navy_deep">#14293D</color>
+    <color name="page_bg">#F2F3F5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="stroke">#DCDDE0</color>
+    <color name="text_dark">#1F2226</color>
+    <color name="text_gray">#6B7178</color>
+    <color name="accent">#0E7C86</color>
+
+    <!-- 第 1 题：列表选中态（课件里的暗红底 + 白字） -->
+    <color name="list_pressed">#8C1114</color>
+    <color name="list_divider">#C9C9C9</color>
+    <color name="thumb_frame">#B9B9B9</color>
+
+    <!-- 第 2 题：自定义对话框 -->
+    <color name="dialog_header">#F6A623</color>
+    <color name="dialog_panel">#F1F1F1</color>
+    <color name="dialog_divider">#D8D8D8</color>
+    <color name="dialog_hint">#9AA0A6</color>
+
+    <!-- 第 4 题：ActionMode -->
+    <color name="actionmode_bar">#0E5A6E</color>
+    <color name="row_checked">#9BD8F5</color>
+
+    <!-- 第 5 题：RecyclerView -->
+    <color name="card_line">#E6E7E9</color>
+</resources>

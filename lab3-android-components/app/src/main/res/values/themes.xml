@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Lab3Components" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/navy</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="android:windowBackground">@color/page_bg</item>
+        <item name="android:statusBarColor">@color/navy</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">#FFFFFF</item>
+        <!-- 第 4 题的上下文操作栏：必须用 AppCompat 的 actionMode* 属性，
+             android: 命名空间那两个（actionModeBackground / actionModeCloseDrawable）在
+             Material3 主题里不生效。操作栏铺成深青色后，状态栏区域的图标也是白字白勾，
+             正好和全屏 edge-to-edge 的透明状态栏对上，不会再出现白字压白底。 -->
+        <!-- 第 4 题的上下文操作栏：Material3 主题下真正生效的只有 android:actionModeCloseDrawable
+             （决定左上角那个关闭勾），actionModeBackground 怎么设都还是系统浅灰底。
+             所以不再硬去改底色，改成：栏里用深色图标 + 进 ActionMode 时把状态栏图标切成深色。 -->
+        <item name="android:actionModeCloseDrawable">@drawable/ic_check_dark</item>
+    </style>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_header" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="18dp"
+        android:paddingTop="14dp"
+        android:paddingEnd="18dp"
+        android:paddingBottom="10dp"
+        android:text="@string/hint_04"
+        android:textColor="@color/text_gray"
+        android:textSize="12.5sp" />
+
+    <ListView
+        android:id="@+id/listActions"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:choiceMode="multipleChoiceModal"
+        android:divider="@color/card_line"
+        android:dividerHeight="1dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="18dp"
+        android:text="MultiChoiceModeListener 负责 ActionMode：条目状态变化时改标题，垃圾桶删除选中项"
+        android:textColor="@color/text_gray"
+        android:textSize="11sp" />
+</LinearLayout>

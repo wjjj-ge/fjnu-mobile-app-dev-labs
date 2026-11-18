@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">实验3-界面组件</string>
+    <string name="app_subtitle">Android 界面组件实践 · ListView / 自定义对话框 / XML 菜单 / ActionMode / RecyclerView</string>
+    <string name="menu_hint">点击任意一题，进入对应的组件实现</string>
+
+    <string name="nav_01_no">01</string>
+    <string name="nav_01_title">ListView 与通知</string>
+    <string name="nav_01_desc">SimpleAdapter 绑定图片与名称，点击行弹 Toast 并发通知</string>
+    <string name="nav_01_tag">SimpleAdapter / Toast / Notification</string>
+
+    <string name="nav_02_no">02</string>
+    <string name="nav_02_title">自定义 AlertDialog</string>
+    <string name="nav_02_desc">登录框布局交给 setView()，橙色页头 + 双按钮</string>
+    <string name="nav_02_tag">AlertDialog.Builder / setView</string>
+
+    <string name="nav_03_no">03</string>
+    <string name="nav_03_title">XML 定义菜单</string>
+    <string name="nav_03_desc">字体大小与颜色两个子菜单，外加一个普通菜单项</string>
+    <string name="nav_03_tag">res/menu / PopupMenu</string>
+
+    <string name="nav_04_no">04</string>
+    <string name="nav_04_title">ActionMode 上下文菜单</string>
+    <string name="nav_04_desc">长按进入多选，标题显示已选数量，可一键删除</string>
+    <string name="nav_04_tag">MultiChoiceMode / ActionMode</string>
+
+    <string name="nav_05_no">05</string>
+    <string name="nav_05_title">RecyclerView 列表</string>
+    <string name="nav_05_desc">ViewHolder 复用，点名称即插入一条并局部刷新</string>
+    <string name="nav_05_tag">Adapter / ViewHolder / notifyItemInserted</string>
+
+    <string name="back">返回</string>
+
+    <!-- 01 -->
+    <string name="hint_01">点击任意一行：先弹 Toast，再发一条带应用图标的通知</string>
+    <string name="toast_selected">你选中的动物是：%1$s</string>
+    <string name="notify_channel_name">实验3 列表通知</string>
+    <string name="notify_title_self">动物列表</string>
+    <string name="notify_text">你刚才选中了 %1$s，点这条通知可以回到实验3 的列表页。</string>
+    <string name="notify_denied">通知权限未开启，只显示 Toast。到「设置 → 通知」里给实验3 开权限后再试。</string>
+    <string-array name="animal_names">
+        <item>Lion</item>
+        <item>Tiger</item>
+        <item>Monkey</item>
+        <item>Dog</item>
+        <item>Cat</item>
+        <item>Elephant</item>
+    </string-array>
+
+    <!-- 02 -->
+    <string name="hint_02">点按钮弹出对话框：布局来自 dialog_signin.xml，整块通过 setView() 塞进 AlertDialog</string>
+    <string name="dialog_open">打开登录对话框</string>
+    <string name="dialog_brand">ANDROID APP</string>
+    <string name="dialog_user">Username</string>
+    <string name="dialog_pwd">Password</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_sign">Sign in</string>
+    <string name="dialog_empty">用户名和密码都要填</string>
+    <string name="dialog_sign_in">登录中：%1$s</string>
+
+    <!-- 03 -->
+    <string name="hint_03">点右上角的三点菜单：字体大小、普通菜单项、字体颜色</string>
+    <string name="test_text">用于测试的内容</string>
+    <string name="test_text_hint">当前：16 sp · 黑色</string>
+    <string name="menu_font_size">字体大小</string>
+    <string name="menu_font_small">小（10 sp）</string>
+    <string name="menu_font_medium">中（16 sp）</string>
+    <string name="menu_font_large">大（20 sp）</string>
+    <string name="menu_normal">普通菜单项</string>
+    <string name="menu_font_color">字体颜色</string>
+    <string name="menu_color_red">红色</string>
+    <string name="menu_color_black">黑色</string>
+    <string name="toast_normal_item">这是普通菜单项，点完只弹 Toast</string>
+    <string name="state_fmt">当前：%1$s · %2$s</string>
+    <string name="size_small">10 sp</string>
+    <string name="size_medium">16 sp</string>
+    <string name="size_large">20 sp</string>
+    <string name="color_red_name">红色</string>
+    <string name="color_black_name">黑色</string>
+
+    <!-- 04 -->
+    <string name="hint_04">长按任意一行进入 ActionMode，可连续多选；垃圾桶删除选中项</string>
+    <string name="selected_fmt">%1$d selected</string>
+    <string name="action_done">完成</string>
+    <string name="action_delete">删除</string>
+    <string name="deleted_fmt">已删除 %1$d 项</string>
+    <string name="restore">恢复全部</string>
+    <string-array name="action_items">
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+        <item>Five</item>
+    </string-array>
+
+    <!-- 05 -->
+    <string name="hint_05">点条目里的名称：立刻插入一条新记录，列表只刷新插入位置</string>
+    <string name="count_fmt">共 %1$d 条记录</string>
+    <string name="added_fmt">已在 %1$s 之后插入「%2$s」</string>
+</resources>

@@ -6,15 +6,20 @@
 
 <table>
   <tr>
-    <td align="center" width="50%">
-      <img src="lab1-android-basics/docs/screenshots/01-main.png" width="300"><br>
+    <td align="center" width="33%">
+      <img src="lab1-android-basics/docs/screenshots/01-main.png" width="260"><br>
       <b>实验 1 · Android 开发基础</b><br>
       <sub>运行环境自检卡 + 生命周期观测台（9 个回调实时上屏）</sub>
     </td>
-    <td align="center" width="50%">
-      <img src="lab2-android-layout/docs/screenshots/01-main.png" width="300"><br>
+    <td align="center" width="33%">
+      <img src="lab2-android-layout/docs/screenshots/01-main.png" width="260"><br>
       <b>实验 2 · Android 界面布局</b><br>
       <sub>线性 / 表格 / 约束 ×2 / Compose 五题合一的目录式 App</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="lab3-android-components/docs/screenshots/01-main.png" width="260"><br>
+      <b>实验 3 · Android 界面组件</b><br>
+      <sub>ListView / 自定义对话框 / 菜单 / ActionMode / RecyclerView 五题合一</sub>
     </td>
   </tr>
 </table>
@@ -27,8 +32,9 @@
 | --- | --- | --- | --- | --- |
 | 实验 1 | [`lab1-android-basics/`](lab1-android-basics/) | Android 开发基础：运行环境、Activity 生命周期 | 运行环境自检卡 + 生命周期观测台（9 个回调全落地）、5 张实测截图、`logcat` 原始证据 | [CSDN · 实验1](https://blog.csdn.net/wjjj_ge/article/details/170988982) |
 | 实验 2 | [`lab2-android-layout/`](lab2-android-layout/) | Android 界面布局：线性 / 表格 / 约束 ×2 / Compose | 五题合一的目录式 App、8 张实机截图、五套布局技法逐题说明 | [CSDN · 实验2](https://blog.csdn.net/wjjj_ge/article/details/170990569) |
+| 实验 3 | [`lab3-android-components/`](lab3-android-components/) | Android 界面组件：ListView / 自定义对话框 / XML 菜单 / ActionMode / RecyclerView | 五题合一的目录式 App、18 张实机截图、Toast 与通知、多选删除、RecyclerView 局部刷新 | CSDN · 实验3（发布后回填） |
 
-后续实验按 `lab2-xxx/`、`lab3-xxx/` 续加，并在上表补一行。
+后续实验按 `lab4-xxx/`、`lab5-xxx/` 续加，并在上表补一行。
 
 ## 各实验说明
 
@@ -44,6 +50,13 @@
   - 约束布局 1：计算器 16 键四行横链（`spread` + 等权重），不嵌套 `LinearLayout`
   - 约束布局 2：太空订票首页，等权重页签、绿底等宽、白框压接缝、贴底 `DEPART`
   - Compose：`mutableStateListOf` + `LazyColumn` 的待办清单，勾选即重组，计数与删除线同步
+
+- **实验 3**：[`lab3-android-components/README.md`](lab3-android-components/README.md)
+  - ListView：`SimpleAdapter` 六行动物表（名称左、44dp 缩略图右、1dp 分隔线），点行弹 Toast 并发通知（自定义渠道 + 彩色 `largeIcon`）
+  - 自定义 AlertDialog：`setView()` 塞整块登录框（橙头 `ANDROID APP` + 双输入框 + Cancel/Sign in），透明窗口固定 300dp 宽
+  - XML 菜单：`res/menu` + `PopupMenu`，字号（10/16/20sp）与颜色（红/黑）两个 `single` 单选子菜单互斥，状态行同步
+  - ActionMode：`CHOICE_MODE_MULTIPLE_MODAL` 多选，标题实时「N selected」，垃圾桶一键倒序删除
+  - RecyclerView：`ViewHolder` 复用 + 稳定 id + `getBindingAdapterPosition()`，点名称插入一条并只刷新插入位置之后的序号
 
 ## 实测要点（Android 16 / API 36）
 
@@ -88,6 +101,8 @@ fjnu-mobile-app-dev-labs/
    ├─ logcat-Lab1Lifecycle.txt
    └─ run-debug.bat          一键编译安装
 ```
+
+`lab2-android-layout/`、`lab3-android-components/` 结构同上，各自是能独立构建的 Gradle 工程。
 
 每个实验完成后打一个 tag（`lab1`、`lab2` …），方便按版本点开查看当时的完成状态。
 
