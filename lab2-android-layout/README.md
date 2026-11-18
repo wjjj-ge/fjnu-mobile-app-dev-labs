@@ -67,6 +67,8 @@
 - `doneCount = todos.count { it.done }` 跟着重组自动更新，"已完成 x / y" 与删除线同时变化；
 - 列表用 `LazyColumn`，输入框 + `Button` 用 `Row` 排，新增后自动重排。
 
+注意一项容易被忽略的事：Compose 页的页头是自己在 Kotlin 里画的，**没有 XML 版 `view_header` 里那个返回按钮**，所以「‹ 返回」也得自己补——一个 `Text` 加 `Modifier.clickable(onClick = onBack)`，`onBack` 传 `finish()` 即可。少了这一行，页面就只能靠系统返回键退出。
+
 ## 构建与运行
 
 最快的路径：启动模拟器后，直接双击本目录下的 `run-debug.bat`（先 `--stop` 清守护进程，再 `installDebug`，最后重启 App 并打印 PID）。脚本输出里 PID 每次都不一样，就说明装的是新包。

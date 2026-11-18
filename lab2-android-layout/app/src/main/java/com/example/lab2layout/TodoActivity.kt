@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -50,7 +51,7 @@ class TodoActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MaterialTheme {
-                TodoScreen()
+                TodoScreen(onBack = { finish() })
             }
         }
     }
@@ -62,7 +63,7 @@ private data class TodoItem(
 )
 
 @Composable
-fun TodoScreen() {
+fun TodoScreen(onBack: () -> Unit = {}) {
     val todos = remember {
         mutableStateListOf(
             TodoItem("复习 LinearLayout 的 weight 分配", true),
@@ -87,6 +88,13 @@ fun TodoScreen() {
                 .statusBarsPadding()
                 .padding(start = 20.dp, end = 20.dp, top = 14.dp, bottom = 18.dp)
         ) {
+            Text(
+                text = "‹  返回",
+                color = Color(0xFFCFE0EC),
+                fontSize = 13.sp,
+                modifier = Modifier.clickable(onClick = onBack)
+            )
+            Spacer(Modifier.height(6.dp))
             Text(
                 text = "COMPOSE",
                 color = Color(0xFF9FB8CC),
