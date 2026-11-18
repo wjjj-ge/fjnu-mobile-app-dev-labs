@@ -14,6 +14,8 @@ echo === 1/3 device ===
 "%ADB%" devices
 echo.
 echo === 2/3 build + install ===
+rem Stop the running Gradle daemon first: a daemon born inside Android Studio gets its adb/aapt2 children blocked
+call gradlew.bat --stop >nul 2>nul
 call gradlew.bat installDebug --console=plain
 if errorlevel 1 goto fail
 echo.
