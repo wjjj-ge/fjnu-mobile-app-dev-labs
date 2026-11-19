@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 分类色：生活 / 学习 / 工作 / 灵感 / 未分类 -->
+    <color name="cat_life">#E8846B</color>
+    <color name="cat_study">#4C8DFF</color>
+    <color name="cat_work">#2E9E6B</color>
+    <color name="cat_idea">#B26BE8</color>
+    <color name="cat_none">#9AA6AF</color>
+
+    <!-- 白昼 -->
+    <color name="light_primary">#2F6E5A</color>
+    <color name="light_primary_dark">#245546</color>
+    <color name="light_bg">#F4F7F5</color>
+    <color name="light_surface">#FFFFFF</color>
+    <color name="light_on_surface">#1B2420</color>
+    <color name="light_on_surface_variant">#5C6B64</color>
+    <color name="light_outline">#E2E8E4</color>
+
+    <!-- 夜间 -->
+    <color name="dark_primary">#7FD9BC</color>
+    <color name="dark_primary_dark">#4FB394</color>
+    <color name="dark_bg">#111614</color>
+    <color name="dark_surface">#1A211E</color>
+    <color name="dark_on_surface">#E8F1EC</color>
+    <color name="dark_on_surface_variant">#A7B5AE</color>
+    <color name="dark_outline">#2C3631</color>
+
+    <!-- 护眼纸 -->
+    <color name="sepia_primary">#8A5A2B</color>
+    <color name="sepia_primary_dark">#6B451F</color>
+    <color name="sepia_bg">#F3EAD2</color>
+    <color name="sepia_surface">#FBF4E1</color>
+    <color name="sepia_on_surface">#3E2F1C</color>
+    <color name="sepia_on_surface_variant">#7A6647</color>
+    <color name="sepia_outline">#E1D4B6</color>
+
+    <color name="highlight">#FFE9A8</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

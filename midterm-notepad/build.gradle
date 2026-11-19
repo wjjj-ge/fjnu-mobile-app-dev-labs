@@ -1,0 +1,4 @@
+// Top-level build file for Lab3 (Android 界面组件)
+plugins {
+    alias(libs.plugins.android.application) apply false
+}

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.NotePad" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/light_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">#D3E9E0</item>
+        <item name="colorOnPrimaryContainer">#123329</item>
+        <item name="colorSecondary">#3C6B5E</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">#D7E8E2</item>
+        <item name="colorOnSecondaryContainer">#102E26</item>
+        <item name="colorTertiary">#8A5A2B</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorTertiaryContainer">#F0E1CC</item>
+        <item name="colorOnTertiaryContainer">#352612</item>
+        <item name="colorSurface">@color/light_surface</item>
+        <item name="colorOnSurface">@color/light_on_surface</item>
+        <item name="colorSurfaceVariant">#EDF2EF</item>
+        <item name="colorOnSurfaceVariant">@color/light_on_surface_variant</item>
+        <item name="colorSurfaceContainerLowest">#FFFFFF</item>
+        <item name="colorSurfaceContainerLow">#F7FAF8</item>
+        <item name="colorSurfaceContainer">#EFF3F1</item>
+        <item name="colorSurfaceContainerHigh">#E9EFEC</item>
+        <item name="colorSurfaceContainerHighest">#E2E9E5</item>
+        <item name="colorOutline">@color/light_outline</item>
+        <item name="colorOutlineVariant">#EDF1EF</item>
+        <item name="android:colorBackground">@color/light_bg</item>
+        <item name="colorOnBackground">@color/light_on_surface</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:windowBackground">@color/light_bg</item>
+    </style>
+
+    <style name="Theme.NotePad.Light" parent="Base.NotePad" />
+
+    <style name="Theme.NotePad.Dark" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/dark_primary</item>
+        <item name="colorOnPrimary">#0D2B22</item>
+        <item name="colorPrimaryContainer">#1F4A3B</item>
+        <item name="colorOnPrimaryContainer">#C9F2E2</item>
+        <item name="colorSecondary">#A7D8C6</item>
+        <item name="colorOnSecondary">#11332A</item>
+        <item name="colorSecondaryContainer">#26453B</item>
+        <item name="colorOnSecondaryContainer">#CFEDE1</item>
+        <item name="colorTertiary">#E0BE93</item>
+        <item name="colorOnTertiary">#382A17</item>
+        <item name="colorTertiaryContainer">#453421</item>
+        <item name="colorOnTertiaryContainer">#F5DFC6</item>
+        <item name="colorSurface">@color/dark_surface</item>
+        <item name="colorOnSurface">@color/dark_on_surface</item>
+        <item name="colorSurfaceVariant">#232C28</item>
+        <item name="colorOnSurfaceVariant">@color/dark_on_surface_variant</item>
+        <item name="colorSurfaceContainerLowest">#0C110F</item>
+        <item name="colorSurfaceContainerLow">#161D1A</item>
+        <item name="colorSurfaceContainer">#1A211E</item>
+        <item name="colorSurfaceContainerHigh">#202824</item>
+        <item name="colorSurfaceContainerHighest">#262F2B</item>
+        <item name="colorOutline">@color/dark_outline</item>
+        <item name="colorOutlineVariant">#232C28</item>
+        <item name="android:colorBackground">@color/dark_bg</item>
+        <item name="colorOnBackground">@color/dark_on_surface</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:windowBackground">@color/dark_bg</item>
+    </style>
+
+    <style name="Theme.NotePad.Sepia" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/sepia_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">#EBD9BB</item>
+        <item name="colorOnPrimaryContainer">#3B2A13</item>
+        <item name="colorSecondary">#7A6647</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">#EADCC2</item>
+        <item name="colorOnSecondaryContainer">#3A2E1B</item>
+        <item name="colorTertiary">#7D5C36</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorTertiaryContainer">#F0E1C8</item>
+        <item name="colorOnTertiaryContainer">#352612</item>
+        <item name="colorSurface">@color/sepia_surface</item>
+        <item name="colorOnSurface">@color/sepia_on_surface</item>
+        <item name="colorSurfaceVariant">#EFE3C8</item>
+        <item name="colorOnSurfaceVariant">@color/sepia_on_surface_variant</item>
+        <item name="colorSurfaceContainerLowest">#FDF8EA</item>
+        <item name="colorSurfaceContainerLow">#F8F0DC</item>
+        <item name="colorSurfaceContainer">#F3EAD3</item>
+        <item name="colorSurfaceContainerHigh">#EDE3C9</item>
+        <item name="colorSurfaceContainerHighest">#E6DCC0</item>
+        <item name="colorOutline">@color/sepia_outline</item>
+        <item name="colorOutlineVariant">#EDE1C7</item>
+        <item name="android:colorBackground">@color/sepia_bg</item>
+        <item name="colorOnBackground">@color/sepia_on_surface</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:windowBackground">@color/sepia_bg</item>
+    </style>
+
+    <style name="Widget.NotePad.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">1dp</item>
+        <item name="cardBackgroundColor">?attr/colorSurface</item>
+    </style>
+
+    <style name="Text.NotePad.Title" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.NotePad.Snippet" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+</resources>

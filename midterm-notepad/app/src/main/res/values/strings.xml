@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">记事本 · 期中实验</string>
+
+    <string name="list_title">记事本</string>
+    <string name="editor_title_hint">标题</string>
+    <string name="editor_content_hint">开始记录…</string>
+    <string name="empty_title">还没有笔记</string>
+    <string name="empty_hint">点右下角的按钮写第一条</string>
+    <string name="empty_search_title">没有找到相关笔记</string>
+    <string name="empty_search_hint">试试别的关键词，或清空搜索</string>
+
+    <string name="menu_search">搜索</string>
+    <string name="menu_sort">排序</string>
+    <string name="menu_settings">设置</string>
+    <string name="menu_export">导出为 Markdown</string>
+    <string name="menu_backup">备份为 JSON</string>
+    <string name="menu_restore">从备份恢复</string>
+    <string name="menu_save">保存</string>
+    <string name="menu_delete">删除</string>
+
+    <string name="sort_modified">按最后修改</string>
+    <string name="sort_created">按创建时间</string>
+    <string name="sort_title">按标题</string>
+
+    <string name="cat_all">全部</string>
+    <string name="cat_life">生活</string>
+    <string name="cat_study">学习</string>
+    <string name="cat_work">工作</string>
+    <string name="cat_idea">灵感</string>
+    <string name="cat_none">未分类</string>
+
+    <string name="settings_title">偏好设置</string>
+    <string name="settings_theme">外观主题</string>
+    <string name="theme_light">白昼</string>
+    <string name="theme_dark">夜间</string>
+    <string name="theme_sepia">护眼纸</string>
+    <string name="settings_font_size">编辑器字号</string>
+    <string name="settings_default_sort">默认排序</string>
+    <string name="settings_snippet">列表显示内容摘要</string>
+    <string name="settings_snippet_hint">关闭后列表只显示标题与时间</string>
+
+    <string name="search_hint">搜索标题或内容</string>
+    <string name="toast_saved">已保存</string>
+    <string name="toast_deleted">已删除</string>
+    <string name="toast_copied">已复制到剪贴板</string>
+    <string name="dlg_delete_title">删除这条笔记？</string>
+    <string name="dlg_delete_msg">删除后无法撤销</string>
+    <string name="action_cancel">取消</string>
+    <string name="action_delete">删除</string>
+
+    <string name="editor_meta">创建 %1$s · 修改 %2$s · %3$d 字</string>
+    <string name="export_done">已导出 %1$d 条笔记 → Download/NotePad</string>
+    <string name="backup_done">已备份 %1$d 条笔记 → Download/NotePad</string>
+    <string name="restore_done">已恢复 %1$d 条笔记</string>
+    <string name="restore_failed">恢复失败：%1$s</string>
+    <string name="io_failed">操作失败：%1$s</string>
+</resources>
