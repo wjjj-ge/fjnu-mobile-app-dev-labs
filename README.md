@@ -32,7 +32,7 @@
 | --- | --- | --- | --- | --- |
 | 实验 1 | [`lab1-android-basics/`](lab1-android-basics/) | Android 开发基础：运行环境、Activity 生命周期 | 运行环境自检卡 + 生命周期观测台（9 个回调全落地）、5 张实测截图、`logcat` 原始证据 | [CSDN · 实验1](https://blog.csdn.net/wjjj_ge/article/details/170988982) |
 | 实验 2 | [`lab2-android-layout/`](lab2-android-layout/) | Android 界面布局：线性 / 表格 / 约束 ×2 / Compose | 五题合一的目录式 App、8 张实机截图、五套布局技法逐题说明 | [CSDN · 实验2](https://blog.csdn.net/wjjj_ge/article/details/170990569) |
-| 实验 3 | [`lab3-android-components/`](lab3-android-components/) | Android 界面组件：ListView / 自定义对话框 / XML 菜单 / ActionMode / RecyclerView | 五题合一的目录式 App、18 张实机截图、Toast 与通知、多选删除、RecyclerView 局部刷新 | CSDN · 实验3（发布后回填） |
+| 实验 3 | [`lab3-android-components/`](lab3-android-components/) | Android 界面组件：ListView / 自定义对话框 / XML 菜单 / ActionMode / RecyclerView | 五题合一的目录式 App、18 张实机截图、Toast 与通知、多选删除、RecyclerView 局部刷新 | [CSDN · 实验3](https://blog.csdn.net/wjjj_ge/article/details/171045093) |
 
 后续实验按 `lab4-xxx/`、`lab5-xxx/` 续加，并在上表补一行。
 
