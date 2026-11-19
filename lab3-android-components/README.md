@@ -4,7 +4,7 @@
 
 > **交付状态：已完成**（tag `lab3`）。五题全部实现并实机验证，18 张截图见 `docs/screenshots/`，`run-debug.bat` 可一键编译安装。
 >
-> **图文版实验记录**：CSDN · Android 界面组件实战（见博客链接，发布后回填）
+> **图文版实验记录**：[CSDN · Android 界面组件实战](https://blog.csdn.net/wjjj_ge/article/details/171045093)
 
 | 序号 | 组件 | 主要练的东西 | 源码 |
 | --- | --- | --- | --- |
