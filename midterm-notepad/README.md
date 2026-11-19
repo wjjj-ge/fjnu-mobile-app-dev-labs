@@ -126,11 +126,14 @@ adb shell am start -n com.example.midtermnotepad/.NotesListActivity
 
 或直接双击本目录下的 `run-debug.bat`。
 
-包里带了一个只在 debug 生效的搜索注入入口，用来在没有中文输入法的模拟器上验证中文查询、或复现截图：
+包里带了一个只在 debug 生效的搜索注入入口，用来在没有中文输入法的模拟器上验证中文查询、或复现截图。命令是在**电脑的终端（PowerShell / Android Studio 的 Terminal）里敲的**，不是在 App 的输入框里：
 
 ```powershell
-# 用中文关键词启动并直接进入搜索结果
-adb shell am start -n com.example.midtermnotepad/.NotesListActivity --es debug_query 牛奶
+# 先在电脑上把 adb 目录切过去（或用完整路径 & "D:\Android\Sdk\platform-tools\adb.exe"）
+cd D:\Android\Sdk\platform-tools
+# 页面已经在前台时，先掐掉旧实例，否则 intent 只是送到旧页面、搜索不会刷新
+.\adb.exe shell am force-stop com.example.midtermnotepad
+.\adb.exe shell am start -n com.example.midtermnotepad/.NotesListActivity --es debug_query 牛奶
 # 终端把中文参数吃掉时，改传 Base64（UTF-8）：--es debug_query_b64 <base64>
 ```
 
