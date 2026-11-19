@@ -2,7 +2,7 @@
 
 《移动软件开发》期中实验：以 AOSP 的 NotePad 示例为底子，先补齐「列表条目显示时间戳」「按标题或正文查询」两项基本要求，再按课件给出的方向做五类附加功能——主题美化、笔记分类、笔记排序、导出与备份恢复、偏好设置。
 
-> **交付状态：已完成**（tag `midterm`）。19 张实机截图见 `screenshots/`，`run-debug.bat` 可一键编译安装。
+> **交付状态：已完成**（tag `midterm`）。21 张实机截图见 `screenshots/`，`run-debug.bat` 可一键编译安装。
 >
 > **图文版实验记录**：CSDN 博客（待发布，发布后在此补链接）
 
@@ -11,7 +11,7 @@
 | 课件要求 | 本项目对应 | 截图 |
 | --- | --- | --- |
 | 基本 ①：列表条目加时间戳 | 每条笔记显示「刚刚 / 3 小时前 · 06:15 / 今天 03:15 / 昨天 07:15 / 周一 09:15 / 11-11 09:15」的分级相对时间，编辑页再给完整时间 | 01、04 |
-| 基本 ②：按标题或内容查询 | 工具栏 `SearchView`，`title LIKE ? OR note LIKE ?`，命中关键词黄底加粗高亮，输入 220ms 防抖 | 02 |
+| 基本 ②：按标题或内容查询 | 工具栏 `SearchView`，`title LIKE ? OR note LIKE ?`，命中关键词黄底加粗高亮，输入 220ms 防抖；中英文关键词都能命中 | 02、02-search-zh、02-search-zh-2 |
 | 附加 ①：美化 UI、更换背景 | 白昼 / 夜间 / 护眼纸三套主题，卡片式列表、分类色条、`ExtendedFAB` | 06–10 |
 | 附加 ②：笔记分类 | 生活 / 学习 / 工作 / 灵感 / 未分类，列表顶部 chip 筛选，编辑器里选分类 | 03、04 |
 | 附加 ③：笔记排序 | 按最后修改 / 按创建时间 / 按标题；菜单项标题直接写着当前排序，点开是一个单选对话框，勾完即生效并自动关闭 | 05、05-sort-dialog、05-sort-by-title |
@@ -24,6 +24,10 @@
 | 列表（时间戳 + 分类色条） | 搜索「Activity」，命中处高亮 |
 | --- | --- |
 | ![列表](screenshots/01-list.png) | ![搜索](screenshots/02-search.png) |
+
+| 搜索「牛奶」（中文关键词，筛出 1 条） | 搜索「实验」（标题 + 正文各命中 1 条） |
+| --- | --- |
+| ![中文搜索-牛奶](screenshots/02-search-zh.png) | ![中文搜索-实验](screenshots/02-search-zh-2.png) |
 
 | 分类筛选「学习」 | 编辑页（创建/修改时间、字数、分类） |
 | --- | --- |
@@ -122,6 +126,16 @@ adb shell am start -n com.example.midtermnotepad/.NotesListActivity
 
 或直接双击本目录下的 `run-debug.bat`。
 
+包里带了一个只在 debug 生效的搜索注入入口，用来在没有中文输入法的模拟器上验证中文查询、或复现截图：
+
+```powershell
+# 用中文关键词启动并直接进入搜索结果
+adb shell am start -n com.example.midtermnotepad/.NotesListActivity --es debug_query 牛奶
+# 终端把中文参数吃掉时，改传 Base64（UTF-8）：--es debug_query_b64 <base64>
+```
+
+它读 `debug_query` / `debug_query_b64` 两个 extra，填进 `SearchView` 后照常走 `LIKE` 查询；release 包这段直接跳过。
+
 包名 `com.example.midtermnotepad`，应用名「记事本 · 期中实验」，`minSdk 24` / `targetSdk 37`，AGP 9.4.1 + Gradle 9.6.0，纯 Java（无 Compose、无 Kotlin）。
 
 ## 踩坑记录
@@ -136,7 +150,7 @@ adb shell am start -n com.example.midtermnotepad/.NotesListActivity
 8. **坐标必须从 `uiautomator dump` 取**：截图是 1080×2400，但渲染出来的预览图被缩放，目测坐标乘 1.2 才对得上；直接 dump 的 `bounds` 才是设备像素。
 9. **模拟器没设备时**：`Start-Process "D:\Android\Sdk\emulator\emulator.exe" -ArgumentList "-avd","Pixel7API36","-no-snapshot-load"`，再轮询 `sys.boot_completed=1`。
 10. **`PopupMenu` 子菜单没有「返回上一级」**：`<item>` 里套 `<menu>` 做出来的二级菜单，选完想退回去只能把整份菜单重开；原地加「返回」项再 `show()` 父菜单会闪、位置也跳。最终把排序改成普通菜单项 + 单选对话框，顺带把「当前排的是哪种」写进菜单标题，省掉「两个勾」这种要靠记忆的交互。
-11. **模拟器里打不出中文，不等于搜索不支持中文**：这台 AVM 的 Gboard 只装了 English (US)，`ime list` 里没有中文子类型；`adb shell input text 牛奶` 也会直接抛 `KeyCharacterMap` 相关的 `NullPointerException`。搜索本身走的是 SQLite 的 `title LIKE ? OR note LIKE ?`，与语言无关——用 `adb shell "run-as … sqlite3 databases/notepad.db"` 从 stdin 喂 `select … where title like '%牛奶%'`，能查到「周末采购清单」，`%实验%` 能查到「期中实验…」和「随手记」（正文「实验室 302」）。要在模拟器里手输中文，得先装一个中文输入法（真机自带，最省事）。
+11. **模拟器里打不出中文，不等于搜索不支持中文**：这台 AVM 的 Gboard 只装了 English (US)，`ime list` 里没有中文子类型，键盘上也没有中/英切换；`adb shell input text 牛奶` 直接抛 `java.lang.NullPointerException`（`InputShellCommand.sendText`，`KeyCharacterMap` 映射不了非 ASCII）。搜索本身走 SQLite 的 `title LIKE ? OR note LIKE ?`，与语言无关：从 stdin 喂 SQL 给应用库 `title like '%牛奶%'` 能查到「周末采购清单」，`%实验%` 能查到「期中实验…」和「随手记」（正文「实验室 302」）。`ADBKeyboard` 这类注入型输入法在 API 36 上也没跑通（广播 `result=0`、键盘不显示），最后是给 debug 包加了个 `debug_query` extra，用 `am start --es` 把关键词塞进 `SearchView`，`02-search-zh*.png` 就是这么拍的。要亲手拼音打字，还是得装一个中文输入法或换真机。
 
 ## 目录结构
 

@@ -3,11 +3,13 @@ package com.example.midtermnotepad;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +31,7 @@ import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -50,6 +53,7 @@ public class NotesListActivity extends AppCompatActivity implements NoteAdapter.
     private TextView emptyTitle;
     private TextView emptyHint;
     private ChipGroup chipGroup;
+    private SearchView searchView;
 
     private NoteAdapter adapter;
     private int filterCategory = FILTER_ALL;
@@ -191,9 +195,9 @@ public class NotesListActivity extends AppCompatActivity implements NoteAdapter.
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_list, menu);
-        SearchView search = (SearchView) menu.findItem(R.id.action_search).getActionView();
-        search.setQueryHint(getString(R.string.search_hint));
-        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+        searchView.setQueryHint(getString(R.string.search_hint));
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 keyword = query == null ? "" : query;
@@ -208,12 +212,35 @@ public class NotesListActivity extends AppCompatActivity implements NoteAdapter.
                 return true;
             }
         });
-        search.setOnQueryTextFocusChangeListener((v, hasFocus) -> {
+        searchView.setOnQueryTextFocusChangeListener((v, hasFocus) -> {
             if (!hasFocus) {
-                search.clearFocus();
+                searchView.clearFocus();
             }
         });
+        applyDebugQuery();
         return true;
+    }
+
+    /**
+     * 仅 debug 包：模拟器里没有中文输入法时，用 adb 把关键词直接塞进搜索框，方便自测和截图。
+     * 用法：adb shell am start -n com.example.midtermnotepad/.NotesListActivity --es debug_query 牛奶
+     * 若终端把中文参数吞掉，可改传 Base64（UTF-8）：--es debug_query_b64 <base64>
+     */
+    private void applyDebugQuery() {
+        if (searchView == null
+                || (getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE) == 0) {
+            return;
+        }
+        Intent intent = getIntent();
+        String query = intent.getStringExtra("debug_query");
+        String encoded = intent.getStringExtra("debug_query_b64");
+        if (query == null && encoded != null) {
+            query = new String(Base64.decode(encoded, Base64.DEFAULT), StandardCharsets.UTF_8);
+        }
+        if (query != null && !query.trim().isEmpty()) {
+            searchView.setIconified(false);
+            searchView.setQuery(query, true);
+        }
     }
 
     @Override
