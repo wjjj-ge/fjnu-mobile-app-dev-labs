@@ -136,6 +136,7 @@ adb shell am start -n com.example.midtermnotepad/.NotesListActivity
 8. **坐标必须从 `uiautomator dump` 取**：截图是 1080×2400，但渲染出来的预览图被缩放，目测坐标乘 1.2 才对得上；直接 dump 的 `bounds` 才是设备像素。
 9. **模拟器没设备时**：`Start-Process "D:\Android\Sdk\emulator\emulator.exe" -ArgumentList "-avd","Pixel7API36","-no-snapshot-load"`，再轮询 `sys.boot_completed=1`。
 10. **`PopupMenu` 子菜单没有「返回上一级」**：`<item>` 里套 `<menu>` 做出来的二级菜单，选完想退回去只能把整份菜单重开；原地加「返回」项再 `show()` 父菜单会闪、位置也跳。最终把排序改成普通菜单项 + 单选对话框，顺带把「当前排的是哪种」写进菜单标题，省掉「两个勾」这种要靠记忆的交互。
+11. **模拟器里打不出中文，不等于搜索不支持中文**：这台 AVM 的 Gboard 只装了 English (US)，`ime list` 里没有中文子类型；`adb shell input text 牛奶` 也会直接抛 `KeyCharacterMap` 相关的 `NullPointerException`。搜索本身走的是 SQLite 的 `title LIKE ? OR note LIKE ?`，与语言无关——用 `adb shell "run-as … sqlite3 databases/notepad.db"` 从 stdin 喂 `select … where title like '%牛奶%'`，能查到「周末采购清单」，`%实验%` 能查到「期中实验…」和「随手记」（正文「实验室 302」）。要在模拟器里手输中文，得先装一个中文输入法（真机自带，最省事）。
 
 ## 目录结构
 
