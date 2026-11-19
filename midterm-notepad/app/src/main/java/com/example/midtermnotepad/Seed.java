@@ -45,8 +45,8 @@ final class Seed {
                         + "ContentProvider 的 CRUD 与 notifyChange\n"
                         + "RecyclerView 局部刷新 notifyItemInserted / notifyItemRangeChanged");
 
-        insert(context, "地铁上的晚霞", NotePad.CATEGORY_IDEA, now - 2 * day, now - day - 2 * hour,
-                "七点二十，从师大站上车，靠窗那侧整片天是橘粉色的。\n"
+        insert(context, "公交上的晚霞", NotePad.CATEGORY_IDEA, now - 2 * day, now - day - 2 * hour,
+                "七点二十，从师大站坐上公交，靠窗那侧整片天是橘粉色的。\n"
                         + "想起一句：日子过得快，但晚霞每天都按时到。");
 
         insert(context, "英语单词：Unit 7", NotePad.CATEGORY_STUDY, now - 4 * day, now - 3 * day,

@@ -218,9 +218,9 @@ public class NotesListActivity extends AppCompatActivity implements NoteAdapter.
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        menu.findItem(R.id.sort_modified).setChecked(sort == NoteStore.SORT_MODIFIED);
-        menu.findItem(R.id.sort_created).setChecked(sort == NoteStore.SORT_CREATED);
-        menu.findItem(R.id.sort_title).setChecked(sort == NoteStore.SORT_TITLE);
+        // 排序不再是子菜单，直接把当前排序写进菜单项标题，省掉「勾在哪一项」这个问题
+        menu.findItem(R.id.action_sort)
+                .setTitle(getString(R.string.menu_sort_with, sortLabel(sort)));
         boolean empty = adapter.size() == 0;
         menu.findItem(R.id.action_export).setEnabled(!empty);
         menu.findItem(R.id.action_backup).setEnabled(!empty);
@@ -230,17 +230,8 @@ public class NotesListActivity extends AppCompatActivity implements NoteAdapter.
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.sort_modified) {
-            sort = NoteStore.SORT_MODIFIED;
-            reload();
-            return true;
-        } else if (id == R.id.sort_created) {
-            sort = NoteStore.SORT_CREATED;
-            reload();
-            return true;
-        } else if (id == R.id.sort_title) {
-            sort = NoteStore.SORT_TITLE;
-            reload();
+        if (id == R.id.action_sort) {
+            showSortDialog();
             return true;
         } else if (id == R.id.action_settings) {
             startActivity(new Intent(this, SettingsActivity.class));
@@ -256,6 +247,45 @@ public class NotesListActivity extends AppCompatActivity implements NoteAdapter.
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * 排序用单选对话框，而不是 PopupMenu 的子菜单：
+     * 子菜单没有「返回上一级」，选完想退出去只能把整份菜单重开一遍；
+     * 对话框勾完即时生效并关闭，点「取消」或返回键也能直接退出。
+     */
+    private void showSortDialog() {
+        final int[] modes = {NoteStore.SORT_MODIFIED, NoteStore.SORT_CREATED, NoteStore.SORT_TITLE};
+        String[] labels = new String[modes.length];
+        int checked = 0;
+        for (int i = 0; i < modes.length; i++) {
+            labels[i] = sortLabel(modes[i]);
+            if (modes[i] == sort) {
+                checked = i;
+            }
+        }
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.menu_sort)
+                .setSingleChoiceItems(labels, checked, (dialog, which) -> {
+                    dialog.dismiss();
+                    if (sort != modes[which]) {
+                        sort = modes[which];
+                        reload();
+                        invalidateOptionsMenu();
+                    }
+                })
+                .setNegativeButton(R.string.action_cancel, null)
+                .show();
+    }
+
+    private String sortLabel(int mode) {
+        if (mode == NoteStore.SORT_CREATED) {
+            return getString(R.string.sort_created);
+        }
+        if (mode == NoteStore.SORT_TITLE) {
+            return getString(R.string.sort_title);
+        }
+        return getString(R.string.sort_modified);
     }
 
     // ------------------------------------------------------------------ 列表交互

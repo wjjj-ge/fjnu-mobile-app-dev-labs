@@ -12,6 +12,7 @@
 
     <string name="menu_search">搜索</string>
     <string name="menu_sort">排序</string>
+    <string name="menu_sort_with">排序（%1$s）</string>
     <string name="menu_settings">设置</string>
     <string name="menu_export">导出为 Markdown</string>
     <string name="menu_backup">备份为 JSON</string>
