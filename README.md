@@ -22,6 +22,13 @@
       <sub>ListView / 自定义对话框 / 菜单 / ActionMode / RecyclerView 五题合一</sub>
     </td>
   </tr>
+  <tr>
+    <td align="center" colspan="3">
+      <img src="midterm-notepad/screenshots/01-list.png" width="260"><br>
+      <b>期中实验 · NotePad 记事本应用</b><br>
+      <sub>时间戳 + 标题/正文查询，另加主题、分类、排序、导出备份、偏好设置五类扩展</sub>
+    </td>
+  </tr>
 </table>
 
 运行环境：Android Studio + AGP 9.4.1 / Gradle 9.6 / JDK 21，实测机型为 `Pixel 7 · API 36`（Android 16）。
@@ -33,6 +40,7 @@
 | 实验 1 | [`lab1-android-basics/`](lab1-android-basics/) | Android 开发基础：运行环境、Activity 生命周期 | 运行环境自检卡 + 生命周期观测台（9 个回调全落地）、5 张实测截图、`logcat` 原始证据 | [CSDN · 实验1](https://blog.csdn.net/wjjj_ge/article/details/170988982) |
 | 实验 2 | [`lab2-android-layout/`](lab2-android-layout/) | Android 界面布局：线性 / 表格 / 约束 ×2 / Compose | 五题合一的目录式 App、8 张实机截图、五套布局技法逐题说明 | [CSDN · 实验2](https://blog.csdn.net/wjjj_ge/article/details/170990569) |
 | 实验 3 | [`lab3-android-components/`](lab3-android-components/) | Android 界面组件：ListView / 自定义对话框 / XML 菜单 / ActionMode / RecyclerView | 五题合一的目录式 App、18 张实机截图、Toast 与通知、多选删除、RecyclerView 局部刷新 | [CSDN · 实验3](https://blog.csdn.net/wjjj_ge/article/details/171045093) |
+| 期中实验 | [`midterm-notepad/`](midterm-notepad/) | NotePad 记事本改造：时间戳、标题/正文查询，外加主题、分类、排序、导出备份、偏好设置 | ContentProvider 扩字段、搜索高亮、三套主题、Markdown 导出与 JSON 备份恢复（去重）、17 张实机截图 | 待发布 |
 
 后续实验按 `lab4-xxx/`、`lab5-xxx/` 续加，并在上表补一行。
 
@@ -57,6 +65,14 @@
   - XML 菜单：`res/menu` + `PopupMenu`，字号（10/16/20sp）与颜色（红/黑）两个 `single` 单选子菜单互斥，状态行同步
   - ActionMode：`CHOICE_MODE_MULTIPLE_MODAL` 多选，标题实时「N selected」，垃圾桶一键倒序删除
   - RecyclerView：`ViewHolder` 复用 + 稳定 id + `getBindingAdapterPosition()`，点名称插入一条并只刷新插入位置之后的序号
+
+- **期中实验**：[`midterm-notepad/README.md`](midterm-notepad/README.md)
+  - 基本要求：列表条目显示分级相对时间（刚刚 / x 分钟前 / 今天 / 昨天 / 周X / 日期），编辑页给完整时间
+  - 基本要求：`SearchView` 按标题或正文查询，220ms 防抖，命中关键词黄底加粗高亮，摘要围绕命中处截取
+  - 附加功能：白昼 / 夜间 / 护眼纸三套 Material3 主题；生活 / 学习 / 工作 / 灵感 / 未分类筛选；按修改时间 / 创建时间 / 标题三种排序
+  - 附加功能：导出 Markdown 与备份 JSON 到 `Download/NotePad`，恢复按「同标题 + 同修改时间」去重，保留原时间戳
+  - 附加功能：字号 12–24sp、默认排序、列表摘要开关等偏好设置
+  - 数据层沿用 NotePad 的 ContentProvider 架构，表结构升到 v2 加 `category`，`notifyChange` + `ContentObserver` 自动刷新列表
 
 ## 实测要点（Android 16 / API 36）
 
@@ -102,16 +118,16 @@ fjnu-mobile-app-dev-labs/
    └─ run-debug.bat          一键编译安装
 ```
 
-`lab2-android-layout/`、`lab3-android-components/` 结构同上，各自是能独立构建的 Gradle 工程。
+`lab2-android-layout/`、`lab3-android-components/`、`midterm-notepad/` 结构同上，各自是能独立构建的 Gradle 工程。
 
-每个实验完成后打一个 tag（`lab1`、`lab2` …），方便按版本点开查看当时的完成状态。
+每个实验完成后打一个 tag（`lab1`、`lab2`、`lab3`、`midterm`），方便按版本点开查看当时的完成状态。
 
 ## 提交与版本约定
 
 - **每个实验一条主体提交**：标题只写 `实验 N：主题`，实现细节、修正记录、截图数量全部放进提交正文，避免标题被某一次修 bug 的提交顶掉；
 - **同一实验的收尾/修正提交沿用 `实验 N：` 前缀**，不另起标题、不并入主体提交（例如实验2 的收尾提交），这样目录行始终读成「实验 N：主题」；
 - **提交正文写「这个实验做了什么」**：逐题列练到的知识点、实测结论与修正记录；补链接、改索引、加署名这类文档改动不写进实验提交的正文（GitHub 上悬停目录行读到的就是这段正文）；
-- **每个实验完成打一个 tag**（`lab1`、`lab2`、`lab3`），按包名进对应提交；
+- **每个实验完成打一个 tag**（`lab1`、`lab2`、`lab3`、期中实验用 `midterm`），按包名进对应提交；
 - **仓库层面的改动**（索引、目录约定、说明）单独用 `课程仓库：…` 前缀提交，不混进某个实验的提交里。
 
 ## 作者
