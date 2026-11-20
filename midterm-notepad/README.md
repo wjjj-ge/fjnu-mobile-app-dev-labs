@@ -3,7 +3,7 @@
 《移动软件开发》期中实验项目。以 AOSP 的 NotePad 示例为底子，保留 `ContentProvider + ContentResolver` 架构，补齐「列表时间戳」「标题/正文查询」两项基本要求，并在其之上扩展五类附加功能：三套主题、笔记分类、笔记排序、导出与备份恢复、偏好设置。
 
 - **源码**：<https://github.com/wjjj-ge/fjnu-mobile-app-dev-labs>（`midterm-notepad/` 目录，默认分支 `main`）
-- **图文说明**：CSDN 博客（待发布，发布后在此补链接）
+- **图文说明**：[CSDN 博客 · 期中实验 NotePad 记事本应用改造](https://blog.csdn.net/wjjj_ge/article/details/171106541)
 - **交付状态**：已完成。21 张实机截图见 `screenshots/`，双击 `run-debug.bat` 可一键编译安装。
 
 ---
@@ -313,6 +313,8 @@ cd D:\Android\Sdk\platform-tools
 | `a918f79` | README 补记「模拟器无中文输入法」这条坑 |
 | `c4e3921` | debug 包支持 `debug_query` 注入，补中文搜索截图（19 → 21 张） |
 | `ea6b6e9` | README 写明搜索注入命令要在电脑终端执行、页面前台先 `force-stop` |
+| `c288c81` | README 扩充为完整项目说明（功能一览、架构、数据模型、验证矩阵、已知限制、版本记录） |
+| 最新一次 | README 与根目录 README 回填 CSDN 博客链接 |
 
 > **看最新代码请看默认分支 `main`**：`midterm` 标签固定指向首版交付 `b1d7c3f`，之后的排序交互与中文搜索改进不在该标签内。
 
